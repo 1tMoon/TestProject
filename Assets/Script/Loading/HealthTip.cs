@@ -8,11 +8,14 @@ public class HealthTip : MonoBehaviour
 {
     [Header("组件引用")]
     public GameObject HealthTipPanel;   // 健康提醒页面
-    public GameObject NextPanel;    // 加载完后跳转的下一个场景
+    public GameObject NextPanel;    // 加载完后跳转的下一个页面
     public Slider LoadingSlider;    // 进度条组件
     public TextMeshProUGUI PercentText;    // 百分比文字显示
+
     public GameObject SettingsPanel;    // 设置页面
     public CanvasGroup FadeOutCanvas;   // 控制页面淡出组件
+
+    public GameObject SavePanel;    // 存档页面
 
     [Header("加载设置")]
     public float loadDuration = 2.5f; // 进度条总时长s
@@ -39,6 +42,7 @@ public class HealthTip : MonoBehaviour
         this.timer = 0; // 时间归零
         this.FadeOutCanvas.alpha = 1;   // 淡出数值
         this.SettingsPanel.SetActive(false);
+        this.SavePanel.SetActive(false);
     }
     // 进度条加载与显示
     void SliderShow()
